@@ -58,7 +58,7 @@ def get_dir_page(dir, page):
         with open('content/'+ dir +'/' + page + '.md', 'r') as f:
             text = f.read()
 
-            md = markdown.Markdown(extensions=switch[dir][2])
+            md = markdown.Markdown(extensions=['lib.icons', 'meta', 'fenced_code', 'codehilite'])
             html_content = md.convert(text)
 
             meta_title = md.Meta.get('title', [None])[0]
@@ -89,7 +89,7 @@ def get_items(dir):
         for item in items:
              with open(f"content/{dir}/"+item, 'r') as f:
                 text = f.read()
-                md = markdown.Markdown(extensions=switch[dir][2])
+                md = markdown.Markdown(extensions=['lib.icons', 'meta', 'fenced_code', 'codehilite'])
                 m = {}
                 m['content'] = md.convert(text)
                 m['meta'] = md.Meta
