@@ -1,0 +1,10 @@
+<div class="post">
+    <div class="post-header">
+        <span class="post-tags">{{ item.meta.tags[0] }}</span>
+        <span class="post-date">{{ item.meta.date[0] }}</span>
+    </div>
+    <div class="post-content">
+        {{ item.content|safe }}
+    </div>
+    <a class="post-more" href="{{ item.path }}">more...</a>
+</div>
