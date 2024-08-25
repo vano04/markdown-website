@@ -1,3 +1,6 @@
+# This is a custom extention for processing icons in .md files using ?icon_name?
+# All icons used are from https://feathericons.com/ or https://github.com/feathericons/feather
+
 import markdown
 from markdown.extensions import Extension
 from markdown.preprocessors import Preprocessor
@@ -29,6 +32,5 @@ class IconPreprocessor(Preprocessor):
         icon_name = match.group(1)
         return f'<i data-feather="{icon_name}"></i>'
 
-# The function to make the extension
 def makeExtension(**kwargs):
     return IconExtension(**kwargs)
