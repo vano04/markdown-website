@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root {
+    --primary-color: #ff7738;
+    --primary-hover-color: #cc5e2b;
+}
+body, a, p, h1, h2, h3, h4, h5, h6, li {
+    font-family: "Roboto", sans-serif;
+}
+a {
+    position: relative;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: normal;
+}
+nav {
+   user-select: none; 
+}
+nav a {
+    font-weight: bold;
+}
+a:hover {
+    color: var(--primary-hover-color); /* Darker shade on hover */
+}
+body {
+    padding: 20px;
+    margin: 0 auto;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+}
+.feather {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    width: 90%;
+}
+.post {
+    width: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    /* background-color: #f0f0f0; */
+    margin: 20px;
+}
+.post-header {
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.post-content {
+    max-height: 200px; /* Limit the height of the content */
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 85%, rgba(255, 255, 255, 0)); /* Adjust the gradient to start later */
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0)); /* Adjust the text fade to start later */
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0));
+}
+.post-tags {
+    font-weight: 300;
+}
+.post-date {
+    font-weight: 200;
+    color: var(--primary-color);
+}
+.post-more {
+    float: right;
+    text-align: right;
+    margin: -10px;
+}
+.no-content {
+    font-weight: 300;
+    user-select: none; 
+}
+.codehilite {
+    max-width: 100vw;
+    overflow-x: auto;
+    white-space: nowrap;
+}

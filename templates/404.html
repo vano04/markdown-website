@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>404 - Not Found</title>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        :root {
+            --link-color: #ff7738;
+            --link-hover-color: #cc5e2b;
+        }
+        * {
+            font-family: "Roboto", sans-serif;
+        }
+        a {
+            position: relative;
+            text-decoration: none;
+            color: var(--link-color);
+            font-weight: bold;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        div {
+            text-align: center;
+        }
+        .feather {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.125em;
+        }
+        h1 {
+            text-decoration: underline;
+            font-size: 10vw;
+            margin: 0;
+        }
+        h2 {
+            font-size: 5vw;
+        }
+        h3 {
+            font-size: 3vw;
+        }
+        p {
+            font-size: 2vw;
+        }
+    </style>
+  </head>
+  <body>
+    <div>
+        <h2>Error!</h1>
+        <h1>404</h1>
+        <h3>This page does not exist...</h2>
+        <p>Please return to {% include 'home-button.html' %}</p>
+    </div>
+    <script>
+		document.addEventListener("DOMContentLoaded", function() {
+			feather.replace();
+		});
+	</script>
+  </body>
+</html>
