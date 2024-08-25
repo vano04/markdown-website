@@ -37,7 +37,7 @@ def root():
 def get_page(page):
     if exists("content/index/" + page + ".md"):
         data = {}
-        data["page_title"] = "About"
+        data["page_title"] = page.title()
 
         with open('content/index/' + page + '.md', 'r') as f:
             text = f.read()
