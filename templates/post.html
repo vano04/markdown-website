@@ -2,6 +2,7 @@
     <div class="post-header">
         <span class="post-tags">{{ item.meta.tags[0] }}</span>
         <span class="post-date">{{ item.meta.date[0] }}</span>
+        <a href="{{ item.meta.link[0] }}"><i data-feather="{{ item.meta.icon[0] }}"></i></a>
     </div>
     <div class="post-content">
         {{ item.content|safe }}
