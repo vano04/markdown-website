@@ -60,7 +60,10 @@ def get_dir_page(dir, page):
         with open('content/'+ dir +'/' + page + '.md', 'r') as f:
             text = f.read()
 
-            md = markdown.Markdown(extensions=switch[dir][2])
+            if page == "blog" or page == "projects":
+                md = markdown.Markdown(extensions=switch[dir][2])
+            else:
+                md = markdown.Markdown(extensions=['lib.icons', 'lib.mermaid', 'meta', 'fenced_code', 'codehilite', 'sane_lists', 'nl2br', 'admonition'])
             html_content = md.convert(text)
 
             meta_title = md.Meta.get('title', [None])[0]
