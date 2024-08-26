@@ -1,7 +1,7 @@
 {% if not data['items'] %}
   <span class="no-content">Nothing here yet...</span>
 {% else %}
-  <ul>
+  <ul class="list">
     {% for item in data['items'] %}
       {% include 'post.html' %}
     {% endfor %}

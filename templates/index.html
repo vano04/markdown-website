@@ -7,7 +7,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>{{ data.page_title }}</title>
-	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'base' });
+  </script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js" defer></script>
   <script src="{{ url_for('static', filename='mathjax-config.js') }}" defer></script>
   <script type="text/javascript" id="MathJax-script" defer
@@ -15,11 +19,13 @@
   </script>
   </head>
   <body>
-	{% include 'nav.html' %}
-	{{ data.html|safe }}
-  {% if data.list %}
-    {% include 'list.html' %}
-  {% endif %}
+    <div class="container">
+      {% include 'nav.html' %}
+        {{ data.html|safe }}
+      {% if data.list %}
+        {% include 'list.html' %}
+      {% endif %}
+    </div>
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {
       document.body.style.opacity = "1";

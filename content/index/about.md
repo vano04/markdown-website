@@ -9,15 +9,29 @@ $$\begin{equation}
 Cool huh?  
 
 #### Additionally  
-The website additionally supports:  
+The website additionally supports:
+
 - Live editing of the `.md` files.  
 - Support for custom icons ?command?  
 - Code hightlighting (**LaTeX** for this example):
+
 ```LaTeX
 $$
 \begin{equation}  
     S(\omega)=1.467 H_s^2 \frac{\omega_0^5}{\omega^6} \exp\Bigl[-3^{\frac{\omega}{\omega_0}}\Bigr]^2  
 \end{equation}
 $$
+```
+To top it off I have added mermaid.js support
+
+```mermaid
+    graph TD
+        A[Enter Chart Definition] --> B(Preview)
+        B --> C{decide}
+        C --> D[Keep]
+        C --> E[Edit Definition]
+        E --> B
+        D --> F[Save Image and Code]
+        F --> B
 ```
 `note this page is responsive on mobile!`
