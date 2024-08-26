@@ -105,84 +105,85 @@ body {
     color:#000000 !important;
 }
 .admonition{
-    padding: 15px 20px;
-    padding-bottom: 0 !important;
-    margin-bottom: 20px;
-    border: 1px solid #448aff;
-    border-radius: 4px;
-    box-shadow: 0 0.2rem 0.5rem #0000000d,0 0 0.05rem #0000001a;
-    color: #222222;
+        padding: 15px 20px;
+        padding-bottom: 0 !important;
+        margin-bottom: 20px;
+        border: 1px solid #448aff;
+        border-radius: 4px;
+        box-shadow: 0 0.2rem 0.5rem #0000000d,0 0 0.05rem #0000001a;
+        color: #222222;
 }
 .admonition::before {
-    position: absolute;
-    margin-left: 0;
-    margin-top: -5px;
+        position: absolute;
+        margin-left: 0;
+        margin-top: -5px;
 }
 .admonition-title {
-    font-weight: bold;
-    padding: 10px 20px;
-    padding-left: 6rem; 
-    margin: -15px -20px 0 -20px;
-    border-radius: 4px 4px 0 0;
+        font-weight: bold;
+        padding: 10px 20px;
+        padding-left: 6rem; 
+        margin: -15px -20px 0 -20px;
+        border-radius: 4px 4px 0 0;
 }
 .admonition-title + * {
-    margin-top: 15px;
+        margin-top: 15px;
 }
 .admonition-title a {
-    color: green;
+        color: green;
 }
 
 /* Danger/warning (orange) */
 
 .admonition.danger::before, .admonition.warning::before {
-    content: "⚠️";
-    color: darkorange;
+        content: "⚠️";
+        color: darkorange;
 }
 .admonition.danger, .admonition.warning{
-    border-color: #ff9800;
+        border-color: #ff9800;
 }
 .admonition.danger .admonition-title, .admonition.warning .admonition-title {
-    background-color: #ffe0b2;
+        background-color: #ffe0b2;
 }
 
 /* Important (green) */
 
 .admonition.important::before {
-    content: "❗";
-    color: green;
-    filter: sepia(1) saturate(5)  hue-rotate(90deg);
+        content: "❗";
+        color: green;
+        filter: sepia(1) saturate(5)  hue-rotate(90deg);
 }
 .admonition.important{
-    border-color: #4caf50;
+        border-color: #4caf50;
 }
 .admonition.important .admonition-title {
-    background-color: #c8e6c9;
+        background-color: #c8e6c9;
 }
 
 /* Note (blue) */
 
 .admonition.note::before {
-    content: "✏️";
-    color: royalblue;
-    filter: sepia(1) saturate(3) hue-rotate(180deg);
+        content: "✏️";
+        color: royalblue;
+        filter: sepia(1) saturate(3) hue-rotate(180deg);
 }
 .admonition.note {
-    border-color: #00b8d4;
+        border-color: #00b8d4;
 }
 .admonition.note .admonition-title {
-    background-color: #d9edf7;
+        background-color: #d9edf7;
 }
 
 /* Tip (gold) */
 
 .admonition.tip::before {
-    content: "💡";
-    color: goldenrod;
-    filter: sepia(50%) saturate(3) hue-rotate(-10deg);
+        content: "💡";
+        color: goldenrod;
+        filter: sepia(50%) saturate(3) hue-rotate(-10deg);
 }
 .admonition.tip{
-    border-color: #ffc107;
+        border-color: #ffc107;
 }
 .admonition.tip .admonition-title {
-    background-color: #ffecb3;
+        background-color: #ffecb3;
 }
+
