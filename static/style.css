@@ -106,86 +106,149 @@ body {
     font-weight: bold;
     color:#000000 !important;
 }
-.admonition{
-    padding: 15px 20px;
-    padding-bottom: 0 !important;
-    margin-bottom: 20px;
-    border: 1px solid #448aff;
-    border-radius: 4px;
-    box-shadow: 0 0.2rem 0.5rem #0000000d,0 0 0.05rem #0000001a;
-    color: #222222;
-}
-.admonition::before {
-    position: absolute;
-    margin-left: 0;
-    margin-top: -5px;
-}
-.admonition-title {
+/* General Admonition Styling */
+.admonition {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9 !important;
+    padding: 0;
+    margin: 20px 5px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  .admonition p {
+    padding: 0px 10px;
+  }
+  
+  /* Admonition Title Styling */
+  .admonition-title {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px !important;
     font-weight: bold;
-    padding: 10px 20px;
-    padding-left: 6rem; 
-    margin: -15px -20px 0 -20px;
-    border-radius: 4px 4px 0 0;
-}
-.admonition-title + * {
-    margin-top: 15px;
-}
-.admonition-title a {
-    color: green;
-}
-
-/* Danger/warning (orange) */
-
-.admonition.danger::before, .admonition.warning::before {
-    content: "⚠️";
-    color: darkorange;
-    filter: sepia(60%) saturate(1.5);
-}
-.admonition.danger, .admonition.warning{
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    padding-left: 40px !important; /* Leave space for the icon */
+  }
+  
+  /* General Icon Styling */
+  .admonition-title::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('/static/favicon.svg');
+  }
+  
+  /* Admonition Content Styling */
+  .admonition-content {
+    padding: 15px;
+    font-size: 1em;
+    color: #333;
+  }
+  
+  /* Specific Admonition Types with Icons */
+  
+  /* Attention */
+  .admonition.attention .admonition-title::before {
+    background-image: url('/static/icons/attention.svg');
+  }
+  .admonition.attention .admonition-title{
+    background-color: #fff3e0;
+  }
+  .admonition.attention {
     border-color: #ff9800;
-}
-.admonition.danger .admonition-title, .admonition.warning .admonition-title {
-    background-color: #ffe0b2;
-}
-
-/* Important (green) */
-
-.admonition.important::before {
-    content: "❗";
-    color: green;
-    filter: sepia(1) saturate(5)  hue-rotate(90deg);
-}
-.admonition.important{
+  }
+  
+  /* Caution */
+  .admonition.caution .admonition-title::before {
+    background-image: url('/static/icons/caution.svg');
+  }
+  .admonition.caution .admonition-title{
+    background-color: #fffde7;
+  }
+  .admonition.caution {
+    border-color: #ffeb3b;
+  }
+  
+  /* Danger */
+  .admonition.danger .admonition-title::before {
+    background-image: url('/static/icons/danger.svg');
+  }
+  .admonition.danger .admonition-title{
+    background-color: #ffebee;
+  }
+  .admonition.danger {
+    border-color: #f44336;
+  }
+  
+  /* Error */
+  .admonition.error .admonition-title::before {
+    background-image: url('/static/icons/error.svg');
+  }
+  .admonition.error .admonition-title{
+    background-color: #fce4ec;
+  }
+  .admonition.error {
+    border-color: #e53935;
+  }
+  
+  /* Hint */
+  .admonition.hint .admonition-title::before {
+    background-image: url('/static/icons/hint.svg');
+  }
+  .admonition.hint .admonition-title{
+    background-color: #e3f2fd;
+  }
+  .admonition.hint {
+    border-color: #2196f3;
+  }
+  
+  /* Important */
+  .admonition.important .admonition-title::before {
+    background-image: url('/static/icons/important.svg');
+  }
+  .admonition.important .admonition-title{
+    background-color: #ede7f6;
+  }
+  .admonition.important {
+    border-color: #673ab7;
+  }
+  
+  /* Note */
+  .admonition.note .admonition-title::before {
+    background-image: url('/static/icons/note.svg');
+  }
+  .admonition.note .admonition-title{
+    background-color: #e1f5fe;
+  }
+  .admonition.note {
+    border-color: #03a9f4;
+  }
+  
+  /* Tip */
+  .admonition.tip .admonition-title::before {
+    background-image: url('/static/icons/tip.svg');
+  }
+  .admonition.tip .admonition-title{
+    background-color: #e8f5e9;
+  }
+  .admonition.tip {
     border-color: #4caf50;
-}
-.admonition.important .admonition-title {
-    background-color: #c8e6c9;
-}
-
-/* Note (blue) */
-
-.admonition.note::before {
-    content: "✏️";
-    color: royalblue;
-    filter: sepia(1) saturate(3) hue-rotate(180deg);
-}
-.admonition.note {
-    border-color: #00b8d4;
-}
-.admonition.note .admonition-title {
-    background-color: #d9edf7;
-}
-
-/* Tip (gold) */
-
-.admonition.tip::before {
-    content: "💡";
-    color: goldenrod;
-    filter: sepia(50%) saturate(3) hue-rotate(-10deg);
-}
-.admonition.tip{
-    border-color: #ffc107;
-}
-.admonition.tip .admonition-title {
-    background-color: #ffecb3;
-}
+  }
+  
+  /* Warning */
+  .admonition.warning .admonition-title::before {
+    background-image: url('/static/icons/warning.svg');
+  }
+  .admonition.warning .admonition-title{
+    background-color: #fff3e0;
+  }
+  .admonition.warning {
+    border-color: #ffb74d;
+  }
