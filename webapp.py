@@ -11,11 +11,11 @@ app = Flask(__name__)
 
 # (List?,Code?,[]MD Extentions)
 switch = {
-    "home": [False,False,['lib.icons', 'sane_lists', 'nl2br']],
-    "blog": [True,True,['lib.icons', 'lib.mermaid', 'meta', 'fenced_code', 'codehilite', 'sane_lists', 'nl2br']],
-    "projects": [True,True,['lib.icons', 'lib.mermaid', 'meta', 'fenced_code', 'codehilite', 'sane_lists', 'nl2br']],
-    "about": [False,True,['lib.icons', 'fenced_code', 'codehilite', 'sane_lists', 'nl2br', 'lib.mermaid']],
-    "contact": [False,False,['lib.icons', 'sane_lists', 'nl2br']]
+    "home": [False,False,['lib.icons', 'sane_lists', 'nl2br', 'admonition']],
+    "blog": [True,True,['lib.icons', 'lib.mermaid', 'meta', 'fenced_code', 'codehilite', 'sane_lists', 'nl2br', 'admonition']],
+    "projects": [True,True,['lib.icons', 'lib.mermaid', 'meta', 'fenced_code', 'codehilite', 'sane_lists', 'nl2br', 'admonition']],
+    "about": [False,True,['lib.icons', 'fenced_code', 'codehilite', 'sane_lists', 'nl2br', 'lib.mermaid', 'admonition']],
+    "contact": [False,False,['lib.icons', 'sane_lists', 'nl2br', 'admonition']]
 }
 
 @app.route("/")
@@ -37,7 +37,7 @@ def root():
 def get_page(page):
     if exists("content/index/" + page + ".md"):
         data = {}
-        data["page_title"] = "About"
+        data["page_title"] = page.title()
 
         with open('content/index/' + page + '.md', 'r') as f:
             text = f.read()
