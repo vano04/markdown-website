@@ -1,0 +1,20 @@
+# Ignore compiled Python files
+*.pyc
+__pycache__/
+
+# Ignore logs
+*.log
+
+# Ignore environment files
+.env
+
+# Ignore node_modules folder (for Node.js projects)
+node_modules/
+
+# Ignore temporary files
+*.swp
+.DS_Store
+Thumbs.db
+
+# Ignore virtual environment
+.venv/

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">  
+  <link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}">
+	<meta charset="UTF-8">
+  <meta name="description" content="Portfolio website.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>{{ data.page_title }}</title>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'base' });
+  </script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js" defer></script>
+  <script src="{{ url_for('static', filename='mathjax-config.js') }}" defer></script>
+  <script type="text/javascript" id="MathJax-script" defer
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <!-- <script type="text/javascript" id="MathJax-script" defer
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script> -->
+  <!-- <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script> -->
+  </head>
+  <body>
+    <div class="container">
+      {% include 'nav.html' %}
+        {{ data.html|safe }}
+      {% if data.list %}
+        {% include 'list.html' %}
+      {% endif %}
+    </div>
+	<!-- <script>
+		document.addEventListener("DOMContentLoaded", function() {
+      document.body.style.opacity = "1";
+			feather.replace();
+		});
+	</script> -->
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.body.style.opacity = "1";
+    feather.replace();
+
+    // Inject copy buttons into all codehilite blocks
+    document.querySelectorAll('.codehilite').forEach(container => {
+      const button = document.createElement('button');
+      button.className = 'copy-btn';
+      button.innerHTML = '<i data-feather="copy"></i>'; // use feather icon
+      container.style.position = 'relative';
+      container.insertBefore(button, container.firstChild);
+      feather.replace();
+
+      button.addEventListener('click', () => {
+        const pre = container.querySelector('pre');
+        if (!pre) return;
+        navigator.clipboard.writeText(pre.innerText).then(() => {
+          button.innerHTML = '<i data-feather="check"></i>';
+          feather.replace();
+          setTimeout(() => {
+            button.innerHTML = '<i data-feather="copy"></i>';
+            feather.replace();
+          }, 1000);
+        });
+      });
+    });
+  });
+  </script>
+
+  </body>
+</html>
